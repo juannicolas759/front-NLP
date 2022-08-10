@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row" style="vertical-align: middle;">
+        <div class="col-md-6 mx-auto mt-5">
+            <div class="card" style="background-color:#b7e0ff;">
+                <div class="card-body" style="vertical-align: middle;">
+                    <h2 class="text-center">Resumir texto</h2>
+                        <form [formGroup]="form" (ngSubmit)="resume()">
+                        <div class="container py-3">
+                            <div class="form-group input-group custom-file-button">
+                              <label class="input-group-text" for="inputGroupFile"  accept="text/" >Seleccionar archivo</label>
+                              <input type="file" class="form-control" id="inputGroupFile">
+                            </div>   
+                          </div>
+                        <button type="submit" class="btn btn-dark float-right">Resumir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="vertical-align: middle;">
+          <div class="col-md-6 mx-auto mt-5" *ngIf="result !== '' ">
+              <div class="card" style="background-color:#b7e0ff;">
+                    <div class="card-body" style="vertical-align: middle;">
+                      <div class="card mx-auto" style="background-color:#EFEBE9">
+                        <label style="background-color:#EFEBE9; margin-left: 4%; margin-top: 2%;">
+                          El resumen es: {{result}}</label>
+                      </div>
+                   </div>
+              </div>
+          </div>
+    </div>
+
+</div>
+
+
+
