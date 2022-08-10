@@ -11,7 +11,7 @@ import { NlpService } from 'src/app/services/nlp.service';
 export class FormComponent implements OnInit {
 
   form: FormGroup;
-  result: string = "";
+  result: any = "";
   fileprev: any;
 
   constructor(private fb: FormBuilder,
@@ -25,8 +25,8 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  resume(){
-    this._service.sendText(this.fileprev);
+  async resume(){
+    this.result = await this._service.sendText(this.fileprev);
   }
 
   showPreview(event : any){
