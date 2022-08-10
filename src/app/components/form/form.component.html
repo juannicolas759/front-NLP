@@ -7,9 +7,10 @@
                         <form [formGroup]="form" (ngSubmit)="resume()">
                         <div class="container py-3">
                             <div class="form-group input-group custom-file-button">
-                              <label class="input-group-text" for="inputGroupFile"  accept="text/" >Seleccionar archivo</label>
-                              <input type="file" class="form-control" id="inputGroupFile">
-                            </div>   
+                              <label class="input-group-text" for="inputGroupFile" accept="text/.txt" >Seleccionar archivo</label>
+                              <input type="file" class="form-control" id="inputGroupFile"
+                                #fileUploader (change)="showPreview($event)">
+                            </div>
                           </div>
                         <button type="submit" class="btn btn-dark float-right">Resumir</button>
                     </form>
